@@ -1,0 +1,327 @@
+.saas-home-area {
+    position: relative;
+    height: 100vh;
+    z-index: 1;
+    overflow: hidden;
+    //background-image: url(../img/saas-banner/saas-banner.png);
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .hero-content {
+        margin-top: 70px;
+
+        h1 {    
+            font-size: 60px;
+            color: var(--bs-dark);
+            font-weight: bold;
+            margin: 20px 0 30px 0;
+        }
+        p {
+            color: #7d8087;
+            font-weight: 500;
+            margin: 0 0 0 0;
+            font-size: 16px;
+        }
+        span {
+            display: inline-block;
+            font-size: 15px;
+            color: var(--bs-primary);
+            background-color: #eedbb8;
+            padding: 8px 16px;
+            font-weight: 400;
+            border-radius: 30px;
+        }
+        .saas-btn {
+            margin-top: 35px;
+
+            .saas-btn-one {
+                display: inline-block;
+                color: var(--bs-light);
+                background-color: var(--bs-primary);
+                padding: 14px 25px;
+                font-size: 16px;
+                font-weight: 400;
+                transition: 0.5s;
+                border-radius: 5px;
+
+                i {
+                    position: relative;
+                    top: 0px;
+                    padding-left: 6px;
+                    font-size: 14px;
+                }
+                &:hover {
+                    background-color: var(--bs-dark);
+                    color: var(--bs-light) !important;
+                }
+            }
+            .saas-btn-two {
+                display: inline-block;
+                color: var(--bs-light);
+                background-color: var(--bs-primary);
+                padding: 14px 25px;
+                font-size: 16px;
+                font-weight: 400;
+                transition: 0.5s;
+                border-radius: 5px;
+                margin-left: 15px;
+
+                i {
+                    position: relative;
+                    top: 0px;
+                    padding-left: 6px;
+                    font-size: 14px;
+                }
+                &:hover {
+                    background-color: var(--bs-dark);
+                    color: var(--bs-light);
+                }
+            }
+        }
+    }
+}
+.saas-image {
+    position: relative;
+
+    img {
+        position: absolute;
+        left: 0;
+        top: 40px;
+        animation: movebounce 5s linear infinite;
+        width: 60%;
+
+        &:last-child {
+            animation: movebounce 6s linear infinite;
+            left: 250px;
+            top: 50px;
+        }
+    }
+}
+.circle-img {
+    position: absolute;
+    left: 55%;
+    top: 60%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: -1;
+    right: 0;
+    margin: 0 auto;
+    width: 35%;
+    img {
+        animation-name: rotateMe;
+        animation-duration: 35s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+}
+.shape-img1 {
+    position: absolute;
+    left: 10%;
+    bottom: 25%;
+    z-index: -1;
+    animation: animationFramesOne 20s infinite linear;
+}
+.shape-img2 {
+    position: absolute;
+    left: 5%;
+    top: 10%;
+    z-index: -1;
+    animation-name: rotateMe;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.shape-img3 {
+    position: absolute;
+    right: 10%;
+    top: 10%;
+    z-index: -1;
+    -webkit-animation: animationFramesOne 20s infinite linear;
+    animation: animationFramesOne 20s infinite linear;
+}
+.shape-img4 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: 0 auto;
+    z-index: -1;
+    top: 20%;
+    -webkit-animation: rotate3d 4s linear infinite;
+    animation: rotate3d 4s linear infinite;
+}
+.shape-img5 {
+    position: absolute;
+    left: 20%;
+    top: 20%;
+    z-index: -1;
+    animation: animationFramesOne 20s infinite linear;
+}
+@keyframes MOVE-BG {
+    from {
+        transform: translateX(0);
+    }
+    to { 
+        transform: translateX(88px);
+    }
+}
+@keyframes rotateMe {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes movebounce {
+    0% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    50% {
+        -webkit-transform: translateY(20px);
+        transform: translateY(20px);
+    }
+    100% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+}
+@keyframes movebounce {
+    0% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    50% {
+        -webkit-transform: translateY(20px);
+        transform: translateY(20px);
+    }
+    100% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+}
+@-webkit-keyframes moveleftbounce {
+    0% {
+        -webkit-transform: translateX(0px);
+        transform: translateX(0px);
+    }
+    50% {
+        -webkit-transform: translateX(20px);
+        transform: translateX(20px);
+    }
+    100% {
+        -webkit-transform: translateX(0px);
+        transform: translateX(0px);
+    }
+}
+@keyframes moveleftbounce {
+    0% {
+        -webkit-transform: translateX(0px);
+        transform: translateX(0px);
+    }
+    50% {
+        -webkit-transform: translateX(20px);
+        transform: translateX(20px);
+    }
+    100% {
+        -webkit-transform: translateX(0px);
+        transform: translateX(0px);
+    }
+}
+.rotateme {
+    -webkit-animation-name: rotateme;
+    animation-name: rotateme;
+    -webkit-animation-duration: 40s;
+    animation-duration: 40s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+}
+@keyframes rotateme {
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes rotateme {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes rotate3d {
+    0% {
+        -webkit-transform: rotateY(0deg);
+        transform: rotateY(0deg);
+    }
+    100% {
+        -webkit-transform: rotateY(360deg);
+        transform: rotateY(360deg);
+    }
+}
+
+@keyframes rotate3d {
+    0% {
+        -webkit-transform: rotateY(0deg);
+        transform: rotateY(0deg);
+    }
+    100% {
+        -webkit-transform: rotateY(360deg);
+        transform: rotateY(360deg);
+    }
+}
+@keyframes animationFramesOne {
+    0% {
+        -webkit-transform: translate(0px, 0px) rotate(0deg);
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+    20% {
+        -webkit-transform: translate(73px, -1px) rotate(36deg);
+        transform: translate(73px, -1px) rotate(36deg);
+    }
+    40% {
+        -webkit-transform: translate(141px, 72px) rotate(72deg);
+        transform: translate(141px, 72px) rotate(72deg);
+    }
+    60% {
+        -webkit-transform: translate(83px, 122px) rotate(108deg);
+        transform: translate(83px, 122px) rotate(108deg);
+    }
+    80% {
+        -webkit-transform: translate(-40px, 72px) rotate(144deg);
+        transform: translate(-40px, 72px) rotate(144deg);
+    }
+    100% {
+        -webkit-transform: translate(0px, 0px) rotate(0deg);
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+}
+@-webkit-keyframes animationFramesOne {
+    0% {
+        -webkit-transform: translate(0px, 0px) rotate(0deg);
+    }
+    20% {
+        -webkit-transform: translate(73px, -1px) rotate(36deg);
+    }
+    40% {
+        -webkit-transform: translate(141px, 72px) rotate(72deg);
+    }
+    60% {
+        -webkit-transform: translate(83px, 122px) rotate(108deg);
+    }
+    80% {
+        -webkit-transform: translate(-40px, 72px) rotate(144deg);
+    }
+    100% {
+        -webkit-transform: translate(0px, 0px) rotate(0deg);
+    }
+}

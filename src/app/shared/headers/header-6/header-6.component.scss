@@ -1,0 +1,25 @@
+.navbar {
+    font-size: .875rem;
+    font-weight: 500;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    transition: .3s ease;
+}
+
+.navbar.in {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+
+.navbar.in .ts-background {
+    opacity: 1 !important;
+}
+
+.navbar .ts-background {
+    transition: 1s ease;
+}
+
+[class*="navbar-expand"] .navbar-nav .nav-link {
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+}

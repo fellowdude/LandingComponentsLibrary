@@ -1,0 +1,50 @@
+#banner {
+    background: none no-repeat;
+    height: 700px;
+    background-position: center;
+    background-size: cover;
+    transition: all ease 2.5s;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(0deg, rgba(0,0,0,0.75) 0%, rgba(255,255,255,0) 50%, rgba(0,0,0,0.75) 100%);
+    }
+}
+  
+#banner{
+    &.b_1{
+      background: red no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  
+    &.b_2{
+      background: blue no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  
+    &.b_3{
+      background: yellow no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+}
+
+#title {
+    font-size: 2.8em;
+}
+  
+@media screen and (min-width: 1480px) {
+    #banner {
+      height: 900px;
+    }
+    #title {
+        font-size: 4em;
+    }
+}
+  

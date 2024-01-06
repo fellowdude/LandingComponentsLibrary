@@ -1,0 +1,32 @@
+<div class="container" #data>
+    <div>
+        <div class="row">
+            <ng-container *ngFor="let data of informationData; let i = index">
+                <div class="col">
+                    <div class="text-center position-relative">
+                        <h2>{{data.prefix}}{{data.viewValue | number: '1.'+data.decimals+'-'+data.decimals}}{{data.suffix}}</h2>
+                        <h3 class="mb-0"><b>{{data.title}}</b></h3>
+                        <span class="position-absolute top-50 end-0 translate-middle" *ngIf="i !== (informationData.length - 1)">
+                            <i class='bx bxs-circle text-info'></i>
+                        </span>
+                    </div>
+                </div>
+            </ng-container>
+            <!-- <div class="col">
+                <div class="text-center position-relative">
+                    <h2>$3,15 M</h2>
+                    <h3 class="mb-0">Lorem ipsum</h3>
+                    <span class="position-absolute top-50 end-0 translate-middle">
+                        <i class='bx bx-circle bx-sm text-secondary'></i>
+                    </span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="text-center">
+                    <h2>14%</h2>
+                    <h3 class="mb-0">Lorem ipsum</h3>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div>

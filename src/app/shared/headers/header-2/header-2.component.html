@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg position-fixed left-50 vw-100 bg-secondary py-0 py-xxl-2 z-3" [ngClass]="{'top-0': toggleHeader, 'top--100': !toggleHeader}">
+    <div class="d-flex justify-content-between align-items-center h-100 w-100 py-2 py-xxl-0 px-2 px-xl-5 text-light">
+        <img id="logo" class="navbar-brand img-fluid py-1 px-1 py-xl-3 px-xl-2" [src]="header.logo">
+        <div class="d-block d-xl-none">
+            <a class="text-dark" (click)="toggleMenu()">
+                <i class="bx bxs-menu bx-md"></i>
+            </a>
+        </div>
+        <div class="d-none d-xl-block">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ng-container *ngFor="let option of header.menu">
+                    <li class="nav-item">
+                        <a class="nav-link text-light fs-6 text-uppercase" [routerLink]="'/'+option.link" routerLinkActive="active">{{option.name}}</a>
+                    </li>
+                </ng-container>
+            </ul>
+        </div>
+    </div>
+    <div class="w-100 overflow-hidden d-block d-xxl-none" style="transition: all .5s linear;" [ngClass]="{'mhc-100': toggleMobileHeader, 'mh-0': !toggleMobileHeader}">
+        <hr class="border-light opacity-100 mx-0 my-0"/>
+        <ul class="list-unstyled">
+            <li class="nav-item text-center py-2">
+                <a class="nav-link text-light fs-6" href="#">HOME</a>
+            </li>
+            <li class="nav-item text-center py-2">
+                <a class="nav-link text-light fs-6" href="#about-us">ABOUT US</a>
+            </li>
+            <li class="nav-item text-center py-2">
+                <a class="nav-link text-light fs-6" href="#services">SERVICES</a>
+            </li>
+            <li class="nav-item text-center py-2">
+                <a class="nav-link text-light fs-6" href="#our-magic">OUR MAGIC</a>
+            </li>
+        </ul>
+        <hr class="border-light opacity-100 mx-0 my-0 py-0"/>
+    </div>
+</nav>

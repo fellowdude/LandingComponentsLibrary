@@ -1,0 +1,40 @@
+<nav class="navbar mobile-sidenav navbar-sticky navbar-default validnavs navbar-fixed white on menu-center no-full bg-transaprent">
+
+    <div class="container d-flex justify-content-between align-items-center">            
+        
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="index.html">
+                <img [src]="header.logo" class="logo logo-display" alt="Logo">
+                <img [src]="header.logo" class="logo logo-scrolled" alt="Logo">
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-menu">
+
+            <img [src]="header.logo" alt="Logo">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                <i class="fa fa-times"></i>
+            </button>
+            
+            <ul class="nav navbar-nav navbar-center" data-in="fadeInDown">
+                <ng-container *ngFor="let option of header.menu">
+                    <li class="dropdown option">
+                        <a class="text-decoration-none" [routerLink]="['/'+option.link]" routerLinkActive="active">
+                            {{option.name}}
+                            <i class="bx bx-chevron-down text-dark" *ngIf="option?.subOptions"></i>
+                        </a>
+                        <ul *ngIf="option?.subOptions" class="dropdown-menu animated fadeOutUp">
+                            <ng-container *ngFor="let suboption of option?.subOptions">
+                                <li><a [routerLink]="['/'+option.link]" class="text-decoration-none">{{suboption.name}}</a></li>
+                            </ng-container>
+                        </ul>
+                    </li>
+                </ng-container>
+            </ul>
+        </div>
+        <!-- Main Nav -->
+    </div>   
+</nav>

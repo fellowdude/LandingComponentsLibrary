@@ -1,0 +1,11 @@
+<section id="hero" class="d-flex justify-content-center align-items-center position-relative flex-column" style="height: 700px;">
+    <div class="w-100 h-100 position-absolute top-0 start-0 z-0 bg-image" [ngStyle]="{'background-image': 'url(' + imageLink + ')'}"></div>
+    <div class="z-1 text-white text-center col-4">
+        <h3><b>{{preTitle}}</b></h3>
+        <h1><b>{{title}}</b></h1>
+        <p>{{detail}}</p>
+    </div>
+    <div class="z-1">
+        <a class="btn btn-secondary" [routerLink]="['/'+buttonInfo.link]" >{{buttonInfo.label}}</a>
+    </div>
+</section>

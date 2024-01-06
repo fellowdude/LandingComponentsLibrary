@@ -1,0 +1,16 @@
+<section id="hero" class="d-flex justify-content-center align-items-center position-relative flex-column" style="height: 700px;">
+    <owl-carousel-o class="w-100 h-100 mx-0 px-0" [options]="customOptions">
+        <ng-container *ngFor="let hero of heroInformation; let i = index">
+            <ng-template carouselSlide [id]="i+''">
+                <div class="row w-100 px-0 mx-0 bg-image flex-column justify-content-center align-items-center" style="height: 700px;" [ngStyle]="{'background-image': 'url(' + hero.imageLink + ')'}">
+                    <div class="z-1 text-white text-center col-4">
+                        <h3><b>{{hero.preTitle}}</b></h3>
+                        <h1><b>{{hero.title}}</b></h1>
+                        <p>{{hero.detail}}</p>
+                        <a class="btn btn-secondary" [routerLink]="['/'+hero.buttonInfo.link]" >{{hero.buttonInfo.label}}</a>
+                    </div>
+                </div>
+            </ng-template>  
+        </ng-container> 
+    </owl-carousel-o>
+</section>

@@ -1,0 +1,101 @@
+<form class="w-100 h-100" [formGroup]="dynamicForm" >
+    <ul ngbNav #nav="ngbNav" class="nav-tabs" [(activeId)]="active">
+        <ng-container *ngFor="let step of dynamicFormInputs; let i = index">
+            <li [ngbNavItem]="i + 1" [disabled]="(i > 0 && dynamicForm.get(step.step_id)?.invalid) || false">
+                <button ngbNavLink>{{i+ 1}}</button>
+                <ng-template ngbNavContent [formGroupName]="step.step_id">
+                    <div class="row w-100 py-3">
+                        <h3>{{step.step_title}}</h3>
+                    </div>
+                    <div class="row w-100">
+                        <ng-container *ngFor="let input of step.inputs">
+                            <ng-container [ngSwitch]="input.inpt_tag">
+                                <div class="col-12 my-1" *ngSwitchCase="'input'">
+                                    <label [for]="input.inpt_id" class="form-label">{{input.inpt_title}}</label>
+                                    <input 
+                                        type="text" 
+                                        class="form-control" 
+                                        [id]="input.inpt_id" 
+                                        [placeholder]="input.inpt_placeholder || ''" 
+                                        [autocomplete]="input.inpt_autocomplete || false" 
+                                        [autofocus]="input.inpt_autofocus || false" 
+                                        [formControlName]="input.inpt_id"
+                                    >
+                                </div>
+                                <div class="col-12 my-1" *ngSwitchCase="'select'">
+                                    <label [for]="input.inpt_id" class="form-label">{{input.inpt_title}}</label>
+                                    <select 
+                                        class="form-control" 
+                                        [id]="input.inpt_id" 
+                                        [formControlName]="input.inpt_id"
+                                        *ngIf="input.inpt_values.length <= 20"
+                                    >
+                                        <option [value]="null" selected disabled>Select option</option>
+                                        <ng-container *ngFor="let option of input.inpt_values">
+                                            <option [value]="option.ival_value">{{option.ival_text}}</option>
+                                        </ng-container>
+                                    </select>
+                                    <input 
+                                        [id]="input.inpt_id" 
+                                        type="text" 
+                                        class="form-control"
+                                        placeholder="Write to see options"
+                                        [formControlName]="input.inpt_id"  
+                                        [ngbTypeahead]="input.search" 
+                                        [inputFormatter]="input.formatter"
+                                        [resultFormatter]="input.formatter"
+                                        *ngIf="input.inpt_values.length > 20"
+                                    />
+                                </div>
+                                <div class="col-12 my-1" *ngSwitchCase="'text-area'">
+                                    <label [for]="input.inpt_id" class="form-label">{{input.inpt_title}}</label>
+                                    <textarea 
+                                        class="form-control w-100" 
+                                        [id]="input.inpt_id" 
+                                        [placeholder]="input.inpt_placeholder || ''" 
+                                        [autocomplete]="input.inpt_autocomplete || false" 
+                                        [autofocus]="input.inpt_autofocus || false" 
+                                        [formControlName]="input.inpt_id"
+                                    ></textarea>
+                                </div>
+                                <div class="col-12 my-1" *ngSwitchCase="'radio-list' || 'check-list'">
+                                    <label class="form-label">{{input.inpt_title}}</label>
+                                    <ul class="list-unstyled">
+                                        <ng-container *ngFor="let option of input.inpt_values">
+                                            <li class="mb-1 mt-1 mt-lg-0">
+                                                <input 
+                                                    type="checkbox" 
+                                                    class="form-check-input col-1" 
+                                                    [id]="'rl_'+step.step_id+'_'+input.inpt_id" 
+                                                    (change)="changeChecked($event, step.step_id, input.inpt_id, option.ival_value)" 
+                                                    #check 
+                                                    [disabled]="dynamicForm.get(step.step_id)?.get(input.inpt_id)?.disabled && !check.checked"
+                                                > 
+                                                <label 
+                                                    class="form-check-label ms-1 col-10" 
+                                                    [for]="'rl_'+step.step_id+'_'+input.inpt_id" 
+                                                >
+                                                    {{option.ival_text}}
+                                                </label>
+                                            </li>
+                                        </ng-container>
+                                    </ul>
+                                </div>
+                            </ng-container>
+                        </ng-container>
+                    </div>
+                </ng-template>
+            </li>
+        </ng-container>
+    </ul>
+    <div [ngbNavOutlet]="nav" class="mt-2"></div>
+    <div class="row w-100 mt-2">
+        <div class="col-6 d-flex justify-content-center mx-auto" *ngIf="active !== 1">
+            <button class="btn btn-outline-primary" (click)="previousStep()">Back</button>
+        </div>
+        <div class="col-6 d-flex justify-content-center mx-auto">
+            <button class="btn btn-primary" (click)="nextStep()" *ngIf="active !== dynamicFormInputs.length">Continue</button>
+            <button class="btn btn-primary" (click)="sendData()" *ngIf="active === dynamicFormInputs.length">Send</button>
+        </div>
+    </div>
+</form>

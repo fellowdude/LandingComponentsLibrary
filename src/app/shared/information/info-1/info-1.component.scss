@@ -1,0 +1,44 @@
+.information{
+    cursor: pointer;
+    background-color: var(--bs-secondary);
+  
+    .image-icon{
+      .base{
+        display: block;
+      }
+      .hover{
+        display: none;
+      }
+    }
+  
+    p{
+      color: var(--bs-dark);
+    }
+  
+    a {
+      color: #7e7e7e;
+    }
+  
+    &:hover{
+      background-color: var(--bs-info);
+      a {
+        color: var(--bs-light);
+      }
+      p{
+        color: var(--bs-light);
+      }
+      .image-icon{
+        .base{
+          display: none;
+        }
+        .hover{
+          display: block;
+        }
+      }
+    }
+  }
+  
+  .custom-shadow{
+    box-shadow: 4px 4px 4px 2px rgba(0,0,0,0.25);
+  }
+  

@@ -1,0 +1,27 @@
+<div class="saas-home-area">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12">
+                        <div class="hero-content">
+                            <span>{{preTitle}}</span>
+                            <h1>{{title}}</h1>
+                            <p>{{detail}} </p>
+                            
+                            <div class="saas-btn d-flex align-items-center">
+                                <a [routerLink]="['/'+buttonInfo.link]" class="saas-btn-one text-decoration-none d-flex align-items-center">{{buttonInfo.label}} <i class='bx bx-right-arrow-alt bx-sm'></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-12">
+                        <div class="saas-image">
+                            <img class="img-fluid" [src]="imageLink">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

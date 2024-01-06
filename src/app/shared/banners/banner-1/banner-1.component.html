@@ -1,0 +1,23 @@
+<section id="banner" class="w-100 d-flex position-relative" [ngClass]="bannerType">
+    <div class="d-flex justify-content-center align-items-end container z-1 mb-5">
+      <div class="d-flex gap-3 flex-column justify-content-center align-items-center pb-5">
+        <div class="text-white text-center pb-5">
+            <h1 id="title" class="position-relative py-1">
+                <strong>
+                    {{title}}
+                </strong>
+            </h1>
+            <p class="my-0 py-3 py-xl-1 fs-6 fs-xl-5">
+                {{preTitle}}
+            </p>
+            <p class="my-0 py-0 fs-6 fs-xl-5">
+                {{detail}}
+            </p>
+        </div>
+      </div>
+    </div>
+    <a class="d-flex justify-content-center align-items-center flex-column position-absolute bottom-0 start-50 translate-middle-x p-3 text-decoration-none cursor-pointer" [routerLink]="['/'+buttonInfo.link]">
+        <span class="text-white fs-5 d-none d-xl-flex">{{buttonInfo.label}}</span>
+        <i class='bx bx-chevron-down fs-2 fs-xl-1 text-white'></i>
+    </a>
+</section>

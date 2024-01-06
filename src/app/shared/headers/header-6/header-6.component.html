@@ -1,0 +1,19 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top ts-separate-bg-element" data-bg-color="#141a3a">
+    <div class="container">
+        <a class="navbar-brand" [routerLink]="['/']">
+            <img [src]="header.logo" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ms-auto">
+                <ng-container *ngFor="let option of header.menu">
+                    <a class="d-flex justify-content-center align-items-center nav-link ts-scroll" [routerLink]="['/'+option.link]" routerLinkActive="active">{{option.name}}</a>
+                </ng-container>
+                <a class="ts-scroll btn btn-primary btn-sm m-1 px-3 ts-width__auto rounded-pill" [routerLink]="['/']">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</nav>

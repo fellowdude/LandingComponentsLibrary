@@ -1,0 +1,38 @@
+[data-animate] {
+    opacity: 0;
+    animation-fill-mode: forwards;
+    animation-duration: .6s;
+    animation-timing-function: ease;
+}
+
+@keyframes ts-fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 1.25rem, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.ts-fadeInUp {
+    animation-name: ts-fadeInUp;
+}
+
+@keyframes ts-fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translate3d(-1.25rem, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.ts-fadeInLeft {
+    animation-name: ts-fadeInLeft;
+}
